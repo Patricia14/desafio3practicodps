@@ -7,6 +7,9 @@ import Info from "./Home/Info"
 import Contacto from "./Home/Contacto"
 import Help from "./Home/Help"
 import User from "./Home/User"
+import AlumnosForm from "./AlumnosForm";
+import Alumno from "./Alumno";
+
 
 const ProfilePage = () => {
 
@@ -63,7 +66,10 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
+      
+      <Alumno></Alumno>
           </div>
+          
   )
 };
 

@@ -10,10 +10,28 @@ const firebaseConfig = {
   storageBucket: "notasestudiates.appspot.com",
   messagingSenderId: "4359422220",
   appId: "1:4359422220:web:5dfee0e7c31d25745cc929"
-};
+};/*
+var firebaseConfig = {
+  apiKey: "AIzaSyD5Zgp6ev7WbL_I_cSVKP7KzvDixdlc04I",
+  authDomain: "taller3-c8a96.firebaseapp.com",
+  databaseURL: "https://taller3-c8a96.firebaseio.com",
+  projectId: "taller3-c8a96",
+  storageBucket: "taller3-c8a96.appspot.com",
+  messagingSenderId: "621103704772",
+  appId: "1:621103704772:web:487baf885c412a87327791"
+};*/
+
+  // Initialize Firebase
+ /* var fireDB=firebase.initializeApp(firebaseConfig);
+  export default fireDB.database().ref();*/
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
+
+
+
+const fb = firebase.initializeApp(firebaseConfig);
+export const db = fb.firestore();
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
