@@ -6,8 +6,13 @@ const AlumnosForm = (props) => {
 
   const initialStateValues = {
     nombre: "",
-    apellido: "",
-    cargo: "",
+    nota1: "",
+    nota2: "",
+    nota3: "",
+    nota4: "",
+    nota5: "",
+    promedio:"",
+
   };
 
   const [values, setValues] = useState(initialStateValues);
@@ -58,14 +63,12 @@ const AlumnosForm = (props) => {
       </div>
       <div className="form-group input-group">
         <div className="input-group-text bg-light">
-          <i className="material-icons">contact_page</i>
+          <i className="material-icons">exposure</i>
         </div>
         <input
-          type="text"
-          value={values.apellido}
-          name="apellido"
-          placeholder="Ingrese apellido"
-          className="form-control"
+          type="number"
+          value={values.nota1}
+          name="nota1"
           onChange={handleInputChange}
         />
       </div>
@@ -74,14 +77,46 @@ const AlumnosForm = (props) => {
           <i className="material-icons">exposure</i>
         </div>
         <input
-          type="text"
-          value={values.cargo}
-          name="cargo"
-          placeholder="Ingrese el cargo"
-          className="form-control"
+          type="number"
+          value={values.nota2}
+          name="nota2"
           onChange={handleInputChange}
         />
       </div>
+      <div className="form-group input-group">
+        <div className="input-group-text bg-light">
+          <i className="material-icons">exposure</i>
+        </div>
+        <input
+          type="number"
+          value={values.nota3}
+          name="nota3"
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group input-group">
+        <div className="input-group-text bg-light">
+          <i className="material-icons">exposure</i>
+        </div>
+        <input
+          type="number"
+          value={values.nota4}
+          name="nota4"
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group input-group">
+        <div className="input-group-text bg-light">
+          <i className="material-icons">exposure</i>
+        </div>
+        <input
+          type="number"
+          value={values.nota5}
+          name="nota5"
+          onChange={handleInputChange}
+        />
+      </div>
+     
       <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Guardar" : "Actualizar"}
       </button>

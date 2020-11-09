@@ -67,9 +67,13 @@ const Empleados = () => {
               <tr>
                 <th>Id </th>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Cargo</th>
-                <th>Aciones</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>Nota 5</th>
+                <th>Promedio</th>
+                <th>Estado</th>
               </tr>
             </thead>
             <tbody>
@@ -77,8 +81,13 @@ const Empleados = () => {
                 <tr key={Empleado.id}>
                   <td>{Empleado.id}</td>
                   <td>{Empleado.nombre}</td>
-                  <td>{Empleado.apellido}</td>
-                  <td>{Empleado.cargo}</td>
+                  <td>{Empleado.nota1}</td>
+                  <td>{Empleado.nota2}</td>
+                  <td>{Empleado.nota3}</td>
+                  <td>{Empleado.nota4}</td>
+                  <td>{Empleado.nota5}</td>
+                  <td>{Empleado.promedio}</td>
+                  <td>{Empleado.estado}</td>
                   <td>
                     <button className="btn btn-primary" onClick={() => setCurrentId(Empleado.id)}>Editar</button>
                     &nbsp;
@@ -96,4 +105,3 @@ const Empleados = () => {
 };
 
 export default Empleados;
-
