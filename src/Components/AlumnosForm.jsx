@@ -4,6 +4,7 @@ import { db } from "../firebase";
 
 const AlumnosForm = (props) => {
 
+  const [Empleados, setEmpleados] = useState([]);
   const initialStateValues = {
     nombre: "",
     nota1: "",
@@ -11,8 +12,8 @@ const AlumnosForm = (props) => {
     nota3: "",
     nota4: "",
     nota5: "",
-    promedio:"",
-
+    promedio: "",
+    estado: "",
   };
 
   const [values, setValues] = useState(initialStateValues);
@@ -22,8 +23,23 @@ const AlumnosForm = (props) => {
     setValues({ ...values, [name]: value });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //Sacando el promedio
+    values.promedio = (parseInt(values.nota1) + parseInt(values.nota2) + parseInt(values.nota3) +
+      parseInt(values.nota4) + parseInt(values.nota5)) / (parseInt(5))
+
+    //Estado reprobado, regular, aprobado 
+    if (parseInt(values.promedio) >= parseInt(7)) {
+      values.estado = "Aprobado";
+    } else if (parseInt(values.promedio) >= parseInt(4) && parseInt(values.promedio) < parseInt(7)) {
+      values.estado = "Regular";
+    } else if (parseInt(values.promedio) < parseInt(4)) {
+      values.estado = "Reprobado";
+    }
+    
 
     props.addOrEditEmpleado(values);
     setValues({ ...initialStateValues });
@@ -116,7 +132,7 @@ const AlumnosForm = (props) => {
           onChange={handleInputChange}
         />
       </div>
-     
+
       <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Guardar" : "Actualizar"}
       </button>

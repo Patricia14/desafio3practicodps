@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
 import { auth, generateUserDocument } from "../firebase";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
 
@@ -19,6 +20,9 @@ const SignUp = () => {
       generateUserDocument(user, { displayName });
     }
     catch (error) {
+      toast("Por favor intentar de nuevo :" + error, {
+        type: "info",
+      });
       setError('Error , Por favor intentar de nuevo : ' + error);
     }
     setEmail("");

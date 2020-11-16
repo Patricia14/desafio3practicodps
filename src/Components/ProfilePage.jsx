@@ -21,18 +21,23 @@ const ProfilePage = () => {
   console.log(" Usuario ProfilePage : " + displayName + " - " + email);
 
   const signOut = () => {
-    auth.signOut();  
+    auth.signOut();
   };
 
   return (
     <div>
-      <nav className="navbar navbar-inverse">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <div className="navbar-header">
-            <a className="navbar-brand" href="/">Notas de estudiantes</a>
-          </div>
+        <a class="navbar-brand" href="/">Notas de estudiantes</a>
           <ul className="nav navbar-nav">
-            <li className="active"><Link to="/">Inicio</Link></li>
+            <li style={{
+                  background: `url(${photoURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStE6eAcu7rAnDUrwr8W42CkI0lobXZEd9usw&usqp=CAU'})  no-repeat center center`,
+                  backgroundSize: "cover",
+                  height: "50px",
+                  width: "50px"
+                }}
+                className="border border-blue-300"></li>
+            <li className="btn"><Link to="/">{displayName}</Link></li>
             <button className="btn btn-danger" onClick={() => { signOut() }}>
               Cerrar sesión</button>
           </ul>
@@ -45,16 +50,16 @@ const ProfilePage = () => {
         <User exact path="user" />
       </Router>
 
-      <div className="container">
+     {/* <div className="d-flex align-items-baseline">
         <div className="row">
           <div className="col-md-12">
-            <span className="float-right">
+            <span className="float-center">
               <div
                 style={{
                   background: `url(${photoURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStE6eAcu7rAnDUrwr8W42CkI0lobXZEd9usw&usqp=CAU'})  no-repeat center center`,
                   backgroundSize: "cover",
-                  height: "100px",
-                  width: "100px"
+                  height: "50px",
+                  width: "50px"
                 }}
                 className="border border-blue-300"
               ></div>
@@ -66,10 +71,9 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-      
+              */}
       <Alumno></Alumno>
-          </div>
-          
+    </div>
   )
 };
 
