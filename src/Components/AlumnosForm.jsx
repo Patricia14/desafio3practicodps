@@ -73,6 +73,7 @@ const AlumnosForm = (props) => {
           className="form-control"
           placeholder="Ingrese nombre"
           value={values.nombre}
+          required = "true"
           name="nombre"
           onChange={handleInputChange}
         />
@@ -84,6 +85,10 @@ const AlumnosForm = (props) => {
         <input
           type="number"
           value={values.nota1}
+          placeholder="Nota 1"
+          required ="true"
+          min = "0"
+          max = "10"
           name="nota1"
           onChange={handleInputChange}
         />
@@ -95,6 +100,10 @@ const AlumnosForm = (props) => {
         <input
           type="number"
           value={values.nota2}
+          placeholder="Nota 2"
+          required ="true"
+          min = "0"
+          max = "10"
           name="nota2"
           onChange={handleInputChange}
         />
@@ -106,6 +115,10 @@ const AlumnosForm = (props) => {
         <input
           type="number"
           value={values.nota3}
+          placeholder="Nota 3"
+          required ="true"
+          min = "0"
+          max = "10"
           name="nota3"
           onChange={handleInputChange}
         />
@@ -117,6 +130,10 @@ const AlumnosForm = (props) => {
         <input
           type="number"
           value={values.nota4}
+          placeholder="Nota 4"
+          required ="true"
+          min = "0"
+          max = "10"
           name="nota4"
           onChange={handleInputChange}
         />
@@ -128,6 +145,10 @@ const AlumnosForm = (props) => {
         <input
           type="number"
           value={values.nota5}
+          placeholder="Nota 5"
+          required ="true"
+          min = "0"
+          max = "10"
           name="nota5"
           onChange={handleInputChange}
         />
